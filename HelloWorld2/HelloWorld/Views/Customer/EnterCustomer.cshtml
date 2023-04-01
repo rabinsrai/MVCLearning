@@ -1,0 +1,33 @@
+﻿@model HelloWorld.Models.Customer
+@using HelloWorld.Models;
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>EnterCustomer</title>
+</head>
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<script src="~/Scripts/jquery.validate.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+<body>
+    <div> 
+       
+        @using (Html.BeginForm("Submit","Customer",FormMethod.Post))
+           {
+        <i>Customer Name</i> @Html.TextBoxFor( m => m.CustomerName) <br />
+            @Html.ValidationMessageFor(x => x.CustomerName)<br />
+        <i> Customer Code </i> @Html.TextBoxFor(m => m.CustomerCode)<br />
+            @Html.ValidationMessageFor(x => x.CustomerCode)<br />
+            <input id="Submit1" type="submit" value="submit" />
+        }
+      <br />
+       
+        
+    </div>
+</body>
+</html>
